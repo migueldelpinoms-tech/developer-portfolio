@@ -1,0 +1,172 @@
+---
+/* ============================
+   CV SKILLS (I18N SAFE)
+   ============================ */
+
+import es from "../../locales/es.json";
+import en from "../../locales/en.json";
+import { getLangFromUrl } from "../../utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const dict = lang === "en" ? en : es;
+
+type Skills = {
+  title: string;
+  frontend: { title: string; items: string[] };
+  backend: { title: string; items: string[] };
+  mobile: { title: string; items: string[] };
+  tools: { title: string; items: string[] };
+  other: { title: string; items: string[] };
+  soft: { title: string; items: string[] };
+};
+
+const skills = dict.cv.skills as Skills;
+---
+
+<section class="cv-skills" aria-labelledby="cv-skills-title">
+
+  <h2 id="cv-skills-title" class="cv-section-title">
+    {skills.title}
+  </h2>
+
+  <div class="cv-skills-grid">
+
+    <div class="cv-skill-block">
+      <h3>{skills.frontend.title}</h3>
+      <ul>
+        {skills.frontend.items.map((skill: string) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="cv-skill-block">
+      <h3>{skills.backend.title}</h3>
+      <ul>
+        {skills.backend.items.map((skill: string) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="cv-skill-block">
+      <h3>{skills.mobile.title}</h3>
+      <ul>
+        {skills.mobile.items.map((skill: string) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="cv-skill-block">
+      <h3>{skills.tools.title}</h3>
+      <ul>
+        {skills.tools.items.map((skill: string) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="cv-skill-block">
+      <h3>{skills.other.title}</h3>
+      <ul>
+        {skills.other.items.map((skill: string) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="cv-skill-block">
+      <h3>{skills.soft.title}</h3>
+      <ul>
+        {skills.soft.items.map((skill: string) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.cv-skills{
+  padding: 2.2rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section-title{
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-skills-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.8rem 2.2rem;
+}
+
+.cv-skill-block h3{
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.cv-skill-block ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-skill-block li{
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #1f2937;
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.cv-skill-block li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+@media (max-width: 768px){
+  .cv-skills-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print{
+
+  .cv-skills{
+    padding: 1.4rem 1.4rem;
+  }
+
+  .cv-section-title{
+    font-size: 14pt;
+    margin-bottom: 1rem;
+  }
+
+  .cv-skill-block h3{
+    font-size: 11pt;
+  }
+
+  .cv-skill-block li{
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  .cv-skills-grid{
+    gap: 1rem 1.4rem;
+  }
+
+}
+</style>

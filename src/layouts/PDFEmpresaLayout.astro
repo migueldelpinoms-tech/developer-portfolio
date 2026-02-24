@@ -1,0 +1,152 @@
+---
+const { title = "CV Empresa", lang = "es" } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+
+    <!-- ⚠️ CLAVE ABSOLUTA: CSS GLOBAL -->
+    <style is:global>
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.45;
+      }
+
+      /* ===== PDF ===== */
+      @page {
+        size: A4;
+        margin: 18mm;
+      }
+
+      .page {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 21pt;
+        font-weight: 800;
+        margin: 0;
+      }
+
+      .role {
+        font-size: 11.5pt;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+
+      .meta {
+        font-size: 9.6pt;
+        margin-top: 6px;
+        color: #475569;
+      }
+
+      h2 {
+        font-size: 9.8pt;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 700;
+        margin: 14px 0 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #cbd5e1;
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 2.7fr 1fr;
+        gap: 18px;
+      }
+
+      .header-right {
+        text-align: right;
+      }
+
+      .tag {
+        display: inline-block;
+        border: 1px solid #cbd5e1;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 9pt;
+        margin-bottom: 6px;
+      }
+
+      .divider {
+        height: 1px;
+        background: #020617;
+        margin: 12px 0 18px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1.55fr;
+        gap: 28px;
+      }
+
+      .block {
+        margin-bottom: 14px;
+      }
+
+      .clean-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+      }
+
+      .job-role {
+        font-weight: 600;
+        margin: 4px 0 6px;
+      }
+
+      .small {
+        font-size: 9.2pt;
+      }
+
+      .muted {
+        color: #64748b;
+      }
+
+      .no-break {
+        page-break-inside: avoid;
+      }
+
+      /* ===== SOLO WEB (NO PDF) ===== */
+      @media screen {
+        body {
+          background: #f8fafc;
+        }
+
+        .page {
+          max-width: 960px;
+          margin: 48px auto;
+          padding: 40px 48px;
+          background: #ffffff;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <slot />
+    </div>
+  </body>
+</html>

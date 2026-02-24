@@ -1,0 +1,89 @@
+---
+import { Mail, Github, Linkedin } from "lucide-astro";
+
+const { t } = Astro.props;
+
+/* ================= SAFE TRANSLATION SYSTEM ================= */
+const fallbackMap: Record<string, string> = {
+  "footer.rights": "Todos los derechos reservados"
+};
+
+function translate(key: string): string {
+  if (typeof t === "function") {
+    return t(key);
+  }
+  return fallbackMap[key] ?? key;
+}
+
+const email = "migueldelpinoms@gmail.com";
+---
+
+<footer class="mt-32 py-12 border-t border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-black/40 backdrop-blur-xl">
+  <div class="max-w-[1120px] mx-auto px-6 text-center space-y-6">
+
+    <!-- Enlaces -->
+    <div class="flex justify-center gap-8 text-gray-600 dark:text-gray-300">
+
+      <!-- EMAIL -->
+      <a
+        href={`mailto:${email}`}
+        class="footer-link"
+        aria-label="Email"
+      >
+        <Mail size="20" />
+        <span>Email</span>
+      </a>
+
+      <!-- GITHUB -->
+      <a
+        href="https://github.com/"
+        target="_blank"
+        rel="noopener"
+        class="footer-link"
+        aria-label="GitHub"
+      >
+        <Github size="20" />
+        <span>GitHub</span>
+      </a>
+
+      <!-- LINKEDIN -->
+      <a
+        href="https://linkedin.com/"
+        target="_blank"
+        rel="noopener"
+        class="footer-link"
+        aria-label="LinkedIn"
+      >
+        <Linkedin size="20" />
+        <span>LinkedIn</span>
+      </a>
+
+    </div>
+
+    <!-- Derechos -->
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      © {new Date().getFullYear()} Michael.dev — {translate("footer.rights")}
+    </p>
+
+  </div>
+</footer>
+
+<style>
+/* ================= FOOTER LINKS ================= */
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+</style>

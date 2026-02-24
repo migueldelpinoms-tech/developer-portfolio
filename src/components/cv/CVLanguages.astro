@@ -1,0 +1,176 @@
+---
+/* ============================
+   CV LANGUAGES (I18N)
+   ============================ */
+
+import es from "../../locales/es.json";
+import en from "../../locales/en.json";
+import { getLangFromUrl } from "../../utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const dict = lang === "en" ? en : es;
+
+type Language = {
+  name: string;
+  level: string;
+  description: string;
+};
+
+const title = dict.cv.languages.title;
+
+const languages = dict.cv.languages.items as Language[];
+---
+
+<section class="cv-languages" aria-labelledby="cv-languages-title">
+
+  <h2 id="cv-languages-title" class="cv-section-title">
+    {title}
+  </h2>
+
+  <div class="cv-languages-list">
+
+    {languages.map(lang => (
+      <article class="cv-language-card">
+
+        <header class="cv-language-header">
+          <h3 class="cv-language-name">
+            {lang.name}
+          </h3>
+
+          <span class="cv-language-level">
+            {lang.level}
+          </span>
+        </header>
+
+        <p class="cv-language-description">
+          {lang.description}
+        </p>
+
+      </article>
+    ))}
+
+  </div>
+
+</section>
+
+<style>
+/* ============================
+   CV LANGUAGES
+   ============================ */
+
+.cv-languages{
+  padding: 2.2rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section-title{
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-languages-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.cv-language-card{
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.2rem 1.3rem;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-language-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cv-language-name{
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cv-language-level{
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 0.25rem 0.55rem;
+  border-radius: 0.4rem;
+  white-space: nowrap;
+}
+
+.cv-language-description{
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 900px){
+  .cv-languages-list{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  .cv-languages-list{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   PRINT VERSION
+   ============================ */
+
+@media print{
+
+  .cv-languages{
+    padding: 1.4rem 1.4rem;
+  }
+
+  .cv-section-title{
+    font-size: 14pt;
+    margin-bottom: 1rem;
+  }
+
+  .cv-languages-list{
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .cv-language-card{
+    padding: 0.8rem 0.9rem;
+    border: 1px solid #000;
+  }
+
+  .cv-language-name{
+    font-size: 10.5pt;
+  }
+
+  .cv-language-level{
+    font-size: 9.5pt;
+    background: none;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  .cv-language-description{
+    font-size: 9.8pt;
+    line-height: 1.4;
+  }
+
+}
+</style>

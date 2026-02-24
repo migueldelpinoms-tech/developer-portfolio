@@ -1,0 +1,441 @@
+{
+  "lang_label": "ES",
+
+  "navbar": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+
+  "header": {
+    "alt": "Foto de Michael",
+    "title": "Hola, soy Michael",
+    "available": "Disponible para trabajar",
+    "description": "Desarrollador de aplicaciones multiplataforma con enfoque en interfaces modernas, diseño UI/UX y desarrollo frontend y móvil.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram"
+  },
+
+  "projects": {
+    "title": "Mis Proyectos",
+
+    "featured_badge": "Proyecto destacado",
+    "featured_button": "Hablar sobre este proyecto",
+
+    "tech_label": "Tecnologías",
+
+    "items": {
+      "featured": {
+        "title": "Discover Castilla-La Mancha",
+        "description": "Aplicación móvil Android desarrollada en Kotlin orientada a centralizar y facilitar el acceso a información turística de Castilla-La Mancha. Incluye autenticación de usuarios, navegación por provincias, descarga de guías en PDF y un foro comunitario con datos en tiempo real.",
+        "status": "Proyecto real"
+      },
+
+      "portfolio": {
+        "title": "Portafolio profesional",
+        "description": "Desarrollo de mi propio portafolio como producto digital personal. Arquitectura modular, diseño orientado a producto, SEO técnico, accesibilidad y rendimiento. Base para presentación profesional y evolución de proyectos.",
+        "status": "Producto activo"
+      },
+
+      "python": {
+        "title": "Proyecto de aprendizaje en Python",
+        "description": "Proyecto en desarrollo orientado al aprendizaje progresivo de Python y a la creación de pequeñas soluciones prácticas. Enfocado en reforzar lógica, estructuras de datos y automatización básica como parte de mi evolución técnica.",
+        "status": "En aprendizaje activo"
+      }
+    },
+
+    "tech": {
+      "seo": "SEO técnico",
+      "accessibility": "Accesibilidad",
+      "architecture": "Arquitectura modular",
+      "programming": "Fundamentos de programación",
+      "datastructures": "Estructuras de datos",
+      "automation": "Automatización básica",
+      "cli": "CLI (en progreso)"
+    }
+  },
+
+  "skills": {
+    "title": "Habilidades y Herramientas",
+    "description": "Tecnologías y herramientas con las que he trabajado en proyectos reales, tanto académicos como personales.",
+
+    "frontend": {
+      "title": "Frontend",
+      "items": [
+        "HTML5, CSS3, JavaScript (ES6+)",
+        "Tailwind CSS",
+        "Diseño responsive y mobile-first",
+        "Accesibilidad básica (WCAG)",
+        "Principios de UI/UX aplicados"
+      ]
+    },
+
+    "mobile": {
+      "title": "Mobile",
+      "items": [
+        "Desarrollo Android con Kotlin",
+        "Arquitectura basada en componentes",
+        "Programación orientada a objetos",
+        "Gestión de estados y navegación",
+        "Integración de APIs"
+      ]
+    },
+
+    "tools": {
+      "title": "Herramientas & Backend",
+      "items": [
+        "Git & GitHub",
+        "Firebase (Auth, Realtime Database)",
+        "Consumo de APIs REST",
+        "Testing básico (JUnit, Espresso)",
+        "Android Studio, Visual Studio Code"
+      ]
+    }
+  },
+
+  "about": {
+  "title": "Sobre mí",
+
+  "p1": "Soy desarrollador de aplicaciones multiplataforma con interés en crear experiencias digitales modernas, funcionales y bien diseñadas, tanto en web como en aplicaciones móviles.",
+
+  "p2": "Me enfoco en la calidad, el detalle y la optimización del software. Disfruto transformar ideas en productos sólidos con interfaces cuidadas y soluciones que aportan valor real al usuario.",
+
+  "contact_btn": "Contáctame",
+  "copy_btn": "Copiar email",
+
+  "copy_alert": "Email copiado al portapapeles",
+  "mail_subject": "Contacto desde portafolio"
+},
+
+  "contact": {
+    "title": "¿Hablamos?",
+    "description": "Busco mi primera oportunidad profesional como desarrollador. Si crees que mi perfil puede encajar en tu equipo o proyecto, estaré encantado de escucharte.",
+    "button": "Escríbeme",
+    "copy_btn": "Copiar email",
+    "microcopy": "Respuesta rápida · Sin compromiso · Conversación directa",
+    "copy_alert": "Email copiado al portapapeles",
+    "mail_subject": "Contacto desde mi portafolio"
+  },
+
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+
+  "cv": {
+
+    "header": {
+      "role": "Desarrollador de aplicaciones multiplataforma\n· Web · Mobile · Software",
+
+      "availability": "Disponible para trabajar",
+
+      "location": "Talavera de la Reina, España",
+
+      "portfolio_status": "Portafolio activo",
+
+      "labels": {
+        "location": "Ubicación",
+        "email": "Email",
+        "portfolio": "Portafolio"
+      }
+    },
+
+    "profile": {
+      "role": "Desarrollador de aplicaciones multiplataforma · Web · Mobile · Software",
+      "location": "Talavera de la Reina, España",
+      "description": "Desarrollador de aplicaciones con enfoque en construcción de productos digitales reales. Especialización progresiva en desarrollo web moderno, aplicaciones móviles y arquitectura de software. Interesado en entornos profesionales donde pueda crecer técnicamente, aportar valor y participar en proyectos de calidad con impacto real."
+    },
+
+    "experience": {
+      "title": "Experiencia profesional",
+
+      "items": [
+        {
+          "company": "Renault",
+          "role": "Responsable de departamento – Vehículos de Ocasión",
+          "period": "2017 – 2024",
+          "location": "España",
+
+          "bullets": [
+            "Gestión integral del departamento de vehículos de ocasión, coordinando procesos comerciales, operativos y administrativos.",
+            "Optimización de procesos internos orientados a eficiencia operativa y mejora de la experiencia del cliente.",
+            "Activación y desarrollo de productos y servicios asociados, fidelización de clientes y ampliación de cartera.",
+            "Tasación de vehículos, análisis de mercado y definición de estrategias de venta.",
+            "Coordinación de campañas comerciales y acciones de captación."
+          ]
+        },
+
+        {
+          "company": "ADP Reprografía S.L.U.",
+          "role": "Administrativo – Gestión operativa",
+          "period": "2013 – 2016",
+          "location": "España",
+
+          "bullets": [
+            "Gestión administrativa para empresas del sector telecomunicaciones (Orange y Movistar).",
+            "Organización y control de procesos internos y flujos de trabajo.",
+            "Planificación operativa, seguimiento de objetivos y coordinación interdepartamental.",
+            "Atención a clientes y soporte operativo."
+          ]
+        },
+
+        {
+          "company": "Aki Bricolaje",
+          "role": "Ventas y operaciones",
+          "period": "2006 – 2012",
+          "location": "España",
+
+          "bullets": [
+            "Gestión de ventas y atención al cliente.",
+            "Organización de campañas comerciales y acciones promocionales.",
+            "Control de inventarios y logística de producto.",
+            "Planificación operativa de tienda."
+          ]
+        },
+
+        {
+          "company": "Inmobiliaria Tecnocrete",
+          "role": "Agente inmobiliario",
+          "period": "2005 – 2006",
+          "location": "España",
+
+          "bullets": [
+            "Venta directa y online de inmuebles.",
+            "Captación de clientes y gestión comercial.",
+            "Tasación y análisis de mercado inmobiliario.",
+            "Gestión de operaciones de compraventa."
+          ]
+        }
+      ]
+    },
+
+    "projects": {
+      "title": "Proyectos",
+      "tech_label": "Tecnologías",
+      "features_label": "Características",
+
+      "items": [
+        {
+          "name": "Discover Castilla-La Mancha",
+          "type": "Aplicación móvil Android",
+          "status": "Proyecto real",
+          "description": "Aplicación Android orientada a la promoción cultural y turística de Castilla-La Mancha. Diseño, desarrollo y arquitectura completa del proyecto, con enfoque en experiencia de usuario, escalabilidad y buenas prácticas.",
+
+          "tech": [
+            "Kotlin",
+            "Android Studio",
+            "Autenticación de Firebase",
+            "Base de datos en tiempo real de Firebase",
+            "Arquitectura MVVM",
+            "Componentes de la arquitectura Android",
+            "JUnit",
+            "Espresso"
+          ],
+
+          "features": [
+            "Autenticación de usuarios",
+            "Gestión de datos en tiempo real",
+            "Arquitectura limpia y escalable",
+            "Interfaz orientada a experiencia de usuario",
+            "Testing funcional y unitario"
+          ]
+        },
+
+        {
+          "name": "Portafolio profesional",
+          "type": "Web / Producto digital",
+          "status": "Portafolio activo",
+          "description": "Portafolio web profesional diseñado como producto digital, orientado a marca personal, posicionamiento profesional, performance, accesibilidad, SEO semántico y experiencia de usuario.",
+
+          "tech": [
+            "Astro",
+            "HTML5",
+            "CSS3",
+            "Tailwind CSS",
+            "JavaScript",
+            "SEO técnico",
+            "Accesibilidad web",
+            "Arquitectura de componentes",
+            "Structured Data (Schema.org)"
+          ],
+
+          "features": [
+            "Arquitectura modular por componentes",
+            "SEO semántico y técnico",
+            "Optimización de performance"
+          ]
+        },
+
+        {
+          "name": "Proyectos personales en desarrollo",
+          "type": "I+D / formación continua",
+          "status": "Roadmap activo",
+          "description": "Desarrollo continuo de proyectos personales orientados a mejora técnica, aprendizaje de nuevas tecnologías y construcción de productos reales.",
+
+          "tech": [
+            "Desarrollo web moderno",
+            "Backend",
+            "Arquitectura de software",
+            "APIs",
+            "Bases de datos",
+            "Producto digital"
+          ],
+
+          "features": [
+            "Aprendizaje continuo",
+            "Experimentación tecnológica",
+            "Desarrollo de soluciones reales",
+            "Mejora progresiva de arquitectura",
+            "Evolución profesional constante"
+          ]
+        }
+      ]
+    },
+
+    "skills": {
+      "title": "Habilidades y Competencias",
+
+      "frontend": {
+        "title": "Frontend",
+        "items": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Tailwind CSS",
+          "UI/UX básico",
+          "Responsive Design",
+          "Accesibilidad web"
+        ]
+      },
+
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Java",
+          "Python",
+          "SQL",
+          "MySQL",
+          "POO",
+          "Arquitectura de software básica"
+        ]
+      },
+
+      "mobile": {
+        "title": "Mobile",
+        "items": [
+          "Kotlin",
+          "Android Studio",
+          "Desarrollo Android nativo",
+          "Firebase Authentication",
+          "Firebase Realtime Database",
+          "Arquitectura Android"
+        ]
+      },
+
+      "tools": {
+        "title": "Herramientas",
+        "items": [
+          "Git",
+          "GitHub",
+          "Android Studio",
+          "VS Code",
+          "Eclipse",
+          "NetBeans",
+          "MySQL Workbench",
+          "Odoo (conocimientos básicos)",
+          "Postman(básico)"
+        ]
+      },
+
+      "other": {
+        "title": "Otras competencias técnicas",
+        "items": [
+          "APIs REST",
+          "JSON",
+          "Control de versiones",
+          "Metodologías ágiles (Scrum básico)",
+          "Buenas prácticas de desarrollo",
+          "Testing básico",
+          "Documentación técnica"
+        ]
+      },
+
+      "soft": {
+        "title": "Habilidades sociales",
+        "items": [
+          "Autonomía",
+          "Responsabilidad",
+          "Aprendizaje rápido",
+          "Trabajo en equipo",
+          "Comunicación efectiva",
+          "Adaptabilidad",
+          "Orientación a calidad",
+          "Mentalidad producto"
+        ]
+      }
+    },
+
+    "education": {
+      "title": "Formación Académica",
+      "areas_title": "Áreas de Formación",
+
+      "degree": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
+      "institution": "ILERNA",
+      "year": "2025",
+
+      "description": [
+        "Formación orientada al desarrollo de software multiplataforma.",
+        "Aprendizaje en programación, bases de datos, sistemas, desarrollo web y aplicaciones móviles.",
+        "Enfoque práctico en arquitectura de software, buenas prácticas y desarrollo profesional.",
+        "Preparación para entornos reales de trabajo en desarrollo de aplicaciones y sistemas."
+      ],
+
+      "areas": [
+        "Programación",
+        "Desarrollo web",
+        "Desarrollo móvil",
+        "Bases de datos",
+        "Sistemas informáticos",
+        "Arquitectura de software",
+        "Metodologías de desarrollo",
+        "Entornos profesionales"
+      ]
+    },
+
+    "languages": {
+      "title": "Idiomas",
+
+      "items": [
+        {
+          "name": "Español",
+          "level": "Nativo",
+          "description": "Lengua materna. Dominio completo oral y escrito."
+        },
+
+        {
+          "name": "Inglés",
+          "level": "Usuario básico",
+          "description": "Comprensión técnica básica, lectura de documentación y recursos de desarrollo."
+        },
+
+        {
+          "name": "Alemán",
+          "level": "B1",
+          "description": "Nivel intermedio. Capacidad de comunicación funcional en contextos generales."
+        }
+      ]
+    },
+
+    "footer": {
+      "location": "Talavera de la Reina, España",
+      "role": "Desarrollador de Aplicaciones Multiplataforma",
+      "legal": "Datos incluidos exclusivamente con fines profesionales de contacto y reclutamiento."
+    }
+  }
+}

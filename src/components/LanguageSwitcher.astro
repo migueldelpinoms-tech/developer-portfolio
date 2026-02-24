@@ -1,0 +1,70 @@
+---
+const { lang } = Astro.props;
+
+/* Idioma destino */
+const nextLang = lang === "es" ? "en" : "es";
+const label = nextLang.toUpperCase();
+const flag = nextLang === "es" ? "🇪🇸" : "🇬🇧";
+
+/* Ruta actual */
+const pathname = Astro.url.pathname;
+
+/*
+  Quitamos /es o /en del inicio si existe
+  Ej:
+  /es/cv  -> /cv
+  /en     -> /
+*/
+const cleanPath = pathname.replace(/^\/(es|en)/, "") || "/";
+
+/* Nueva ruta con idioma */
+const nextUrl = `/${nextLang}${cleanPath}`;
+---
+
+<a
+  href={nextUrl}
+  class="lang-switcher"
+  aria-label={`Cambiar idioma a ${label}`}
+>
+  <span class="flag">{flag}</span>
+  <span class="label">{label}</span>
+</a>
+
+<style>
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .45rem .9rem;
+  font-size: .85rem;
+  font-weight: 500;
+
+  border-radius: 9999px;
+
+  border: 1px solid rgb(209 213 219);
+  background: white;
+  color: rgb(17 24 39);
+
+  transition: all .2s ease;
+}
+
+.dark .lang-switcher {
+  background: rgb(17 24 39);
+  border-color: rgb(55 65 81);
+  color: rgb(229 231 235);
+}
+
+.lang-switcher:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.flag {
+  font-size: 1rem;
+}
+
+.label {
+  opacity: .9;
+}
+</style>

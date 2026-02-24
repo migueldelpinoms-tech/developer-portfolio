@@ -1,0 +1,224 @@
+---
+/* ============================
+   CV EDUCATION (I18N SAFE)
+   ============================ */
+
+import es from "../../locales/es.json";
+import en from "../../locales/en.json";
+
+import { getLangFromUrl } from "../../utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const dict = lang === "en" ? en : es;
+
+type Education = {
+  degree: string;
+  institution: string;
+  year: string;
+  description: string[];
+  areas: string[];
+};
+
+const education = dict.cv.education as Education;
+
+const title = dict.cv.education.title;
+const areasTitle = dict.cv.education.areas_title;
+---
+
+<section class="cv-education" aria-labelledby="cv-education-title">
+
+  <h2 id="cv-education-title" class="cv-section-title">
+    {title}
+  </h2>
+
+  <article class="cv-education-card">
+
+    <header class="cv-education-header">
+      <h3 class="cv-degree">
+        {education.degree}
+      </h3>
+
+      <div class="cv-edu-meta">
+        <span class="cv-institution">
+          {education.institution}
+        </span>
+
+        <span class="cv-separator">•</span>
+
+        <span class="cv-year">
+          {education.year}
+        </span>
+      </div>
+    </header>
+
+    <div class="cv-education-body">
+
+      <div class="cv-edu-description">
+        {education.description.map((item) => (
+          <p>{item}</p>
+        ))}
+      </div>
+
+      <div class="cv-edu-areas">
+        <h4>{areasTitle}</h4>
+
+        <ul>
+          {education.areas.map((area) => (
+            <li>{area}</li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+  </article>
+
+</section>
+
+<style>
+/* ============================
+   CV EDUCATION
+   ============================ */
+
+.cv-education{
+  padding: 2.2rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section-title{
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-education-card{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cv-education-header{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cv-degree{
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cv-edu-meta{
+  font-size: 0.95rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-institution{
+  font-weight: 600;
+}
+
+.cv-separator{
+  opacity: 0.6;
+}
+
+.cv-year{
+  font-weight: 500;
+}
+
+.cv-education-body{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+}
+
+.cv-edu-description p{
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  color: #1f2937;
+}
+
+.cv-edu-areas h4{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.cv-edu-areas ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-edu-areas li{
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1f2937;
+  padding-left: 0.9rem;
+  position: relative;
+}
+
+.cv-edu-areas li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px){
+  .cv-education-body{
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* ============================
+   PRINT VERSION
+   ============================ */
+
+@media print{
+
+  .cv-education{
+    padding: 1.4rem 1.4rem;
+  }
+
+  .cv-section-title{
+    font-size: 14pt;
+    margin-bottom: 1rem;
+  }
+
+  .cv-degree{
+    font-size: 11pt;
+  }
+
+  .cv-edu-meta{
+    font-size: 10pt;
+  }
+
+  .cv-edu-description p{
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+
+  .cv-edu-areas h4{
+    font-size: 10.5pt;
+  }
+
+  .cv-edu-areas li{
+    font-size: 10pt;
+  }
+
+}
+</style>

@@ -1,0 +1,161 @@
+---
+import { Sun, Moon } from "lucide-astro";
+
+interface Props {
+  t?: (key: string) => string;
+}
+
+const { t } = Astro.props as Props;
+
+/* Fallback seguro por si t no existe */
+function translate(key: string, fallback: string) {
+  if (typeof t === "function") {
+    const res = t(key);
+    if (res) return res;
+  }
+  return fallback;
+}
+
+const LIGHT_LABEL = translate("theme.light", "Claro");
+const DARK_LABEL = translate("theme.dark", "Oscuro");
+---
+
+<button 
+  id="theme-toggle"
+  class="premium-toggle"
+  data-light-label={LIGHT_LABEL}
+  data-dark-label={DARK_LABEL}
+>
+  <span class="icon-wrapper">
+    <Sun class="icon sun" />
+    <Moon class="icon moon" />
+  </span>
+
+  <span id="theme-label">
+    {LIGHT_LABEL}
+  </span>
+</button>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("theme-toggle");
+  const label = document.getElementById("theme-label");
+  const html = document.documentElement;
+
+  if (!btn || !label) return;
+
+  const LIGHT = btn.dataset.lightLabel;
+  const DARK = btn.dataset.darkLabel;
+
+  const stored = localStorage.getItem("theme");
+
+  if (stored === "dark") {
+    html.classList.add("dark");
+    btn.classList.add("dark-mode");
+    label.textContent = DARK;
+  } else {
+    html.classList.remove("dark");
+    btn.classList.remove("dark-mode");
+    label.textContent = LIGHT;
+  }
+
+  btn.addEventListener("click", () => {
+    const isDark = html.classList.toggle("dark");
+
+    btn.classList.remove("animate");
+    void btn.offsetWidth;
+    btn.classList.add("animate");
+
+    if (isDark) {
+      label.textContent = DARK;
+      btn.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      label.textContent = LIGHT;
+      btn.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  });
+});
+</script>
+
+<style>
+/* ================= PREMIUM TOGGLE ================= */
+
+.premium-toggle {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+
+  padding: .55rem 1rem;
+  font-size: .85rem;
+  font-weight: 500;
+
+  background: white;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 9999px;
+
+  color: rgb(17 24 39);
+
+  transition: all .35s ease;
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.12),
+    inset 0 0 0 rgba(255,255,255,0);
+}
+
+.dark .premium-toggle {
+  background: rgb(17 24 39);
+  border-color: rgb(55 65 81);
+  color: rgb(229 231 235);
+}
+
+/* Icon wrapper */
+.icon-wrapper {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icons */
+.icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+/* Default */
+.sun { opacity: 1; }
+.moon { opacity: 0; }
+
+/* Dark */
+.dark-mode .sun {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.dark-mode .moon {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+/* Glow animation */
+.animate .icon-wrapper {
+  animation: glow .45s ease;
+}
+
+@keyframes glow {
+  0%   { box-shadow: 0 0 0 rgba(255,215,100,0); }
+  40%  { box-shadow: 0 0 12px rgba(255,215,100,0.45); }
+  100% { box-shadow: 0 0 0 rgba(255,215,100,0); }
+}
+</style>

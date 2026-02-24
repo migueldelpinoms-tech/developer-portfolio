@@ -1,0 +1,443 @@
+{
+  "lang_label": "EN",
+
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+
+  "header": {
+    "alt": "Photo of Michael",
+    "title": "Hi, I'm Michael",
+    "available": "Available for work",
+    "description": "Multiplatform application developer with a focus on modern interfaces, UI/UX design, and frontend and mobile development.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram"
+  },
+
+  "projects": {
+    "title": "My Projects",
+
+    "featured_badge": "Featured project",
+    "featured_button": "Talk about this project",
+
+    "tech_label": "Technologies",
+
+    "items": {
+      "featured": {
+        "title": "Discover Castilla-La Mancha",
+        "description": "Android mobile application developed in Kotlin aimed at centralizing and facilitating access to tourist information about Castilla-La Mancha. It includes user authentication, navigation by province, PDF guide downloads, and a community forum with real-time data.",
+        "status": "Real project"
+      },
+
+      "portfolio": {
+        "title": "Professional Portfolio",
+        "description": "Development of my own portfolio as a personal digital product. Modular architecture, product-oriented design, technical SEO, accessibility, and performance. Basis for professional presentation and project development.",
+        "status": "Active product"
+      },
+
+      "python": {
+        "title": "Python Learning Project",
+        "description": "Ongoing project focused on progressive learning of Python and the creation of small practical solutions. Focused on reinforcing logic, data structures, and basic automation as part of my technical development.",
+        "status": "Active learning"
+      }
+    },
+
+    "tech": {
+      "seo": "Technical SEO",
+      "accessibility": "Accessibility",
+      "architecture": "Modular architecture",
+      "programming": "Programming fundamentals",
+      "datastructures": "Data structures",
+      "automation": "Basic automation",
+      "cli": "CLI (in progress)"
+    }
+  },
+
+  "skills": {
+    "title": "Skills & Tools",
+    "description": "Technologies and tools I have worked with in real projects, both academic and personal.",
+
+    "frontend": {
+      "title": "Frontend",
+      "items": [
+        "HTML5, CSS3, JavaScript (ES6+)",
+        "Tailwind CSS",
+        "Responsive and mobile-first design",
+        "Basic accessibility (WCAG)",
+        "Applied UI/UX principles"
+      ]
+    },
+
+    "mobile": {
+      "title": "Mobile",
+      "items": [
+        "Android development with Kotlin",
+        "Component-based architecture",
+        "Object-oriented programming",
+        "State management and navigation",
+        "API integration"
+      ]
+    },
+
+    "tools": {
+      "title": "Tools & Backend",
+      "items": [
+        "Git & GitHub",
+        "Firebase (Auth, Realtime Database)",
+        "REST API consumption",
+        "Basic testing (JUnit, Espresso)",
+        "Android Studio, Visual Studio Code"
+      ]
+    }
+  },
+
+  "about": {
+  "title": "About me",
+
+  "p1": "I am a multiplatform application developer interested in creating modern, functional and well-designed digital experiences, both for web and mobile applications.",
+
+  "p2": "I focus on quality, detail and software optimization. I enjoy transforming ideas into solid products with carefully crafted interfaces and solutions that provide real value to users.",
+
+  "contact_btn": "Contact me",
+  "copy_btn": "Copy email",
+
+  "copy_alert": "Email copied to clipboard",
+  "mail_subject": "Contact from portfolio"
+},
+
+  "contact": {
+    "title": "Shall we talk?",
+    "description": "I am looking for my first professional opportunity as a developer. If you think my profile could be a good fit for your team or project, I would be happy to hear from you.",
+    "button": "Email me",
+    "copy_btn": "Copy email",
+    "microcopy": "Quick response · No commitment · Direct conversation",
+    "copy_alert": "Email copied to clipboard",
+    "mail_subject": "Contact from my portfolio"
+  },
+
+
+  "footer": {
+    "rights": "All rights reserved."
+  },
+
+  "cv": {
+
+    "header": {
+      "role": "Multiplatform application developer\n· Web · Mobile · Software",
+
+      "availability": "Available for work",
+
+      "location": "Talavera de la Reina, Spain",
+
+      "portfolio_status": "Active portfolio",
+
+      "labels": {
+        "location": "Location",
+        "email": "Email",
+        "portfolio": "Portfolio"
+      }
+    },
+
+    "profile": {
+      "role": "Multiplatform application developer · Web · Mobile · Software",
+      "location": "Talavera de la Reina, Spain",
+      "description": "Application developer focused on building real digital products. Progressive specialization in modern web development, mobile applications, and software architecture. Interested in professional environments where I can grow technically, add value, and participate in quality projects with real impact."
+    },
+
+    "experience": {
+      "title": "Professional Experience",
+
+      "items": [
+        {
+          "company": "Renault",
+          "role": "Department manager – Used Vehicles",
+          "period": "2017 – 2024",
+          "location": "Spain",
+
+          "bullets": [
+            "Comprehensive management of the used vehicle department, coordinating commercial, operational, and administrative processes.",
+            "Optimization of internal processes aimed at operational efficiency and improving the customer experience.",
+            "Activation and development of associated products and services, customer loyalty, and portfolio expansion.",
+            "Vehicle appraisal, market analysis, and definition of sales strategies.",
+            "Coordination of commercial campaigns and customer acquisition actions."
+          ]
+        },
+        
+        {
+          "company": "ADP Reprografía S.L.U.",
+          "role": "Administrative – Operational management",
+          "period": "2013 – 2016",
+          "location": "Spain",
+
+          "bullets": [
+            "Administrative management for companies in the telecommunications sector (Orange and Movistar).",
+            "Organization and control of internal processes and workflows.",
+            "Operational planning, goal tracking, and interdepartmental coordination.",
+            "Customer service and operational support."
+          ]
+        },
+
+        {
+          "company": "Aki DIY",
+          "role": "Sales and operations.",
+          "period": "2006 – 2012",
+          "location": "Spain",
+
+          "bullets": [
+            "Sales management and customer service.",
+            "Organization of commercial campaigns and promotional activities.",
+            "Inventory control and product logistics.",
+            "Operational planning for stores."
+          ]
+        },
+
+        {
+          "company": "Tecnorete Real Estate Agency",
+          "role": "Real estate agent",
+          "period": "2005 – 2006",
+          "location": "Spain",
+
+          "bullets": [
+            "Direct and online sale of real estate.",
+            "Client acquisition and commercial management.",
+            "Real estate appraisal and market analysis.",
+            "Management of purchase and sale transactions."
+          ]
+        }
+
+      ]
+    },
+
+    "projects": {
+      "title": "Projects",
+      "tech_label": "Technologies",
+      "features_label": "Features",
+
+      "items": [
+        {
+          "name": "Discover Castilla-La Mancha",
+          "type": "Android mobile application",
+          "status": "Real project",
+          "description": "Android application aimed at promoting culture and tourism in Castilla-La Mancha. Design, development, and complete architecture of the project, with a focus on user experience, scalability, and best practices.",
+
+          "tech": [
+            "Kotlin",
+            "Android Studio",
+            "Firebase Authentication",
+            "Firebase Realtime Database",
+            "MVVM Architecture",
+            "Android Architecture Components",
+            "JUnit",
+            "Espresso"
+          ],
+
+          "features": [
+            "User authentication",
+            "Real-time data management",
+            "Clean and scalable architecture",
+            "UX oriented interface",
+            "Unit and functional testing"
+          ]
+        },
+
+        {
+          "name": "Professional portfolio",
+          "type": "Website / Digital product",
+          "status": "Active portfolio",
+          "description": "Professional web portfolio designed as a digital product, focused on personal branding, professional positioning, performance, accessibility, semantic SEO, and user experience.",
+
+          "tech": [
+            "Astro",
+            "HTML5",
+            "CSS3",
+            "Tailwind CSS",
+            "JavaScript",
+            "Technical SEO",
+            "Web accessibility",
+            "Component architecture",
+            "Structured Data (Schema.org)"
+          ],
+
+          "features": [
+            "Modular component architecture",
+            "Semantic and technical SEO",
+            "Performance optimization"
+          ]
+        },
+
+        {
+          "name": "Personal projects in development",
+          "type": "R&D / continuous training",
+          "status": "Active roadmap",
+          "description": "Continuous development of personal projects aimed at technical improvement, learning new technologies, and building real products.",
+
+          "tech": [
+            "Modern web development",
+            "Backend",
+            "Software architecture",
+            "APIs",
+            "Databases",
+            "Digital product"
+          ],
+
+          "features": [
+            "Continuous learning",
+            "Technological experimentation",
+            "Development of real solutions",
+            "Progressive improvement of architecture",
+            "Constant professional evolution"
+          ]
+        }
+      ]
+    },
+
+    "skills": {
+      "title": "Skills & Competencies",
+
+      "frontend": {
+        "title": "Frontend",
+        "items": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Tailwind CSS",
+          "Basic UI/UX",
+          "Responsive Design",
+          "Web accessibility"
+        ]
+      },
+
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Java",
+          "Python",
+          "SQL",
+          "MySQL",
+          "Object-oriented programming",
+          "Basic software architecture"
+        ]
+      },
+
+      "mobile": {
+        "title": "Mobile",
+        "items": [
+          "Kotlin",
+          "Android Studio",
+          "Native Android development",
+          "Firebase Authentication",
+          "Firebase Realtime Database",
+          "Android architecture"
+        ]
+      },
+
+      "tools": {
+        "title": "Tools",
+        "items": [
+          "Git",
+          "GitHub",
+          "Android Studio",
+          "Visual Studio Code",
+          "Eclipse",
+          "NetBeans",
+          "MySQL Workbench",
+          "Odoo (basic knowledge)",
+          "Postman (basic)"
+        ]
+      },
+
+      "other": {
+        "title": "Other Technical Skills",
+        "items": [
+          "REST APIs",
+          "JSON",
+          "Version control",
+          "Agile methodologies",
+          "Best practices",
+          "Basic testing",
+          "Technical documentation"
+        ]
+      },
+
+      "soft": {
+        "title": "Soft Skills",
+        "items": [
+          "Autonomy",
+          "Responsibility",
+          "Fast learning",
+          "Teamwork",
+          "Effective communication",
+          "Adaptability",
+          "Quality orientation",
+          "Product mindset"
+        ]
+      }
+    },
+
+    "education": {
+      "title": "Academic Education",
+      "areas_title": "Training Areas",
+
+      "degree": "Advanced Technician in Multiplatform Application Development (DAM)",
+      "institution": "ILERNA",
+      "year": "2025",
+
+      "description": [
+        "Training focused on multiplatform software development.",
+        "Learning programming, databases, systems, web and mobile development.",
+        "Practical focus on software architecture, best practices, and professional development.",
+        "Preparation for real-world work environments in application and systems development."
+      ],
+
+      "areas": [
+        "Programming",
+        "Web development",
+        "Mobile development",
+        "Databases",
+        "Computer systems",
+        "Software architecture",
+        "Development methodologies",
+        "Professional environments"
+      ]
+    },
+
+    "languages": {
+      "title": "Languages",
+
+      "items": [
+        {
+          "name": "Spanish",
+          "level": "Native",
+          "description": "Native language. Full oral and written proficiency."
+        },
+
+        {
+          "name": "English",
+          "level": "Basic user",
+          "description": "Basic technical comprehension, reading documentation and development resources."
+        },
+
+        {
+          "name": "German",
+          "level": "B1",
+          "description": "Intermediate level. Ability to communicate functionally in general contexts."
+        }
+      ]
+    },
+
+    "footer": {
+      "location": "Talavera de la Reina, Spain",
+      "role": "Multiplatform Application Developer",
+      "legal": "Data included exclusively for professional contact."
+    }
+  }
+}

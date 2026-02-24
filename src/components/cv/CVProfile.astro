@@ -1,0 +1,133 @@
+---
+/* ============================
+   PROPS
+   ============================ */
+const { t } = Astro.props;
+
+/* ============================
+   STATIC DATA (NO i18n)
+   ============================ */
+const fullName = "Miguel Del Pino Muelas";
+const email = "migueldelpinoms@gmail.com";
+---
+
+<section class="cv-profile" aria-labelledby="cv-profile-title">
+
+  <header class="cv-profile-header">
+
+    <h1 id="cv-profile-title" class="cv-name">
+      {fullName}
+    </h1>
+
+    <p class="cv-role">
+      {t("cv.profile.role")}
+    </p>
+
+    <div class="cv-contact">
+      <span class="cv-location">
+        {t("cv.profile.location")}
+      </span>
+      <span class="cv-separator">·</span>
+      <a href={`mailto:${email}`} class="cv-email">
+        {email}
+      </a>
+    </div>
+
+  </header>
+
+  <div class="cv-profile-body">
+    <p class="cv-profile-text">
+      {t("cv.profile.description")}
+    </p>
+  </div>
+
+</section>
+
+<style>
+/* ============================
+   CV PROFILE
+   ============================ */
+
+.cv-profile{
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-profile-header{
+  margin-bottom: 1.2rem;
+}
+
+.cv-name{
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.cv-role{
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 0.4rem;
+}
+
+.cv-contact{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  color: #1f2937;
+}
+
+.cv-separator{
+  opacity: 0.6;
+}
+
+.cv-email{
+  text-decoration: none;
+  color: inherit;
+}
+
+.cv-email:hover{
+  text-decoration: underline;
+}
+
+/* Body */
+.cv-profile-body{
+  margin-top: 1.1rem;
+}
+
+.cv-profile-text{
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1f2937;
+  max-width: 900px;
+}
+
+/* ============================
+   PRINT VERSION
+   ============================ */
+@media print{
+  .cv-profile{
+    padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  }
+
+  .cv-name{
+    font-size: 18pt;
+  }
+
+  .cv-role{
+    font-size: 11pt;
+  }
+
+  .cv-contact{
+    font-size: 10pt;
+  }
+
+  .cv-profile-text{
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+}
+</style>

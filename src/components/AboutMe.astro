@@ -1,0 +1,98 @@
+---
+const { t } = Astro.props;
+
+/* Translations */
+const copyAlert = t("about.copy_alert");
+const mailSubject = t("about.mail_subject");
+---
+
+<section 
+  id="about"
+  class="py-20 md:py-32 bg-white dark:bg-black text-black dark:text-white"
+  data-aos="fade-up"
+  data-aos-duration="800"
+  data-copy-alert={copyAlert}
+  data-mail-subject={mailSubject}
+>
+  <div class="max-w-[820px] mx-auto px-6">
+
+    <header class="space-y-4 mb-10">
+
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+        {t("about.title")}
+      </h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-[680px]">
+        {t("about.p1")}
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-[680px]">
+        {t("about.p2")}
+      </p>
+
+    </header>
+
+    <div class="h-px w-full bg-gray-200 dark:bg-gray-800 mb-10"></div>
+
+    <div class="flex flex-col sm:flex-row gap-4">
+
+      <!-- EMAIL -->
+      <button
+        type="button"
+        class="inline-flex items-center justify-center px-8 py-3 rounded-lg 
+               bg-black dark:bg-white 
+               text-white dark:text-black 
+               font-semibold text-lg 
+               transition shadow-md hover:shadow-xl"
+        onclick="tryMail()"
+      >
+        {t("about.contact_btn")}
+      </button>
+
+      <!-- COPY -->
+      <button
+        type="button"
+        class="inline-flex items-center justify-center px-8 py-3 rounded-lg 
+               border border-black dark:border-white
+               text-black dark:text-white
+               font-semibold text-lg 
+               transition hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+        onclick="copyMail()"
+      >
+        {t("about.copy_btn")}
+      </button>
+
+    </div>
+
+    <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+      migueldelpinoms@gmail.com
+    </p>
+
+  </div>
+
+  <script is:inline>
+
+    const section = document.getElementById("about");
+
+    const COPY_ALERT = section.dataset.copyAlert;
+    const MAIL_SUBJECT = section.dataset.mailSubject;
+
+    function tryMail() {
+
+      const subject = encodeURIComponent(MAIL_SUBJECT);
+
+      window.location.href =
+        `mailto:migueldelpinoms@gmail.com?subject=${subject}`;
+
+    }
+
+    function copyMail() {
+
+      navigator.clipboard.writeText("migueldelpinoms@gmail.com");
+
+      alert(COPY_ALERT);
+
+    }
+
+  </script>
+</section>

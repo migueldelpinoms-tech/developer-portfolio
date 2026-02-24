@@ -1,0 +1,225 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import CVHeader from "../components/cv/CVHeader.astro";
+import CVProfile from "../components/cv/CVProfile.astro";
+import CVExperience from "../components/cv/CVExperience.astro";
+import CVProjects from "../components/cv/CVProjects.astro";
+import CVSkills from "../components/cv/CVSkills.astro";
+import CVEducation from "../components/cv/CVEducation.astro";
+import CVLanguages from "../components/cv/CVLanguages.astro";
+import CVFooter from "../components/cv/CVFooter.astro";
+
+import { getLangFromUrl, tFactory } from "../utils/i18n.js";
+
+/* === I18N (MISMO SISTEMA QUE HOME) === */
+const lang = getLangFromUrl(Astro.url);
+const t = tFactory(lang);
+
+/* === META === */
+const title =
+  lang === "en"
+    ? "CV | Miguel Del Pino – Multiplatform Developer"
+    : "CV | Miguel Del Pino – Desarrollador Multiplataforma";
+
+const baseUrl = "https://michael.dev";
+const cvUrl = `${baseUrl}/cv`;
+
+const isPdf = Astro.url.searchParams.get("pdf") === "true";
+
+/* === PDF EMPRESA === */
+const cvEmpresaUrl = "/cv-empresa.pdf";
+---
+
+<Layout title={title} lang={lang} t={t}>
+
+  <!-- ================= CV LANDING ================= -->
+  <section class={`cv-page ${isPdf ? "pdf-mode" : ""}`} id="cv-root">
+
+    <!-- ================= TOP ACTION BAR ================= -->
+    {!isPdf && (
+      <div class="cv-actions">
+
+        <div class="cv-actions-left">
+          <span class="cv-badge">
+            {lang === "en" ? "Professional CV" : "CV Profesional"}
+          </span>
+        </div>
+
+        <div class="cv-actions-right">
+
+          <button type="button" class="cv-btn" onclick="setView('preview')">
+            Preview
+          </button>
+
+          <button type="button" class="cv-btn" onclick="setView('recruiter')">
+            Recruiter
+          </button>
+
+          <button type="button" class="cv-btn" onclick="setView('ats')">
+            ATS
+          </button>
+
+          <button type="button" class="cv-btn" onclick="window.print()">
+            {lang === "en" ? "Print" : "Imprimir"}
+          </button>
+
+          <!-- ✅ DESCARGA CV EMPRESA -->
+          <a href={cvEmpresaUrl} class="cv-btn cv-btn-primary" download>
+            {lang === "en" ? "Download CV" : "Descargar CV"}
+          </a>
+
+        </div>
+      </div>
+    )}
+
+    <!-- ================= CV CONTENT ================= -->
+
+    <CVHeader t={t} lang={lang} />
+    <CVProfile t={t} lang={lang} />
+    <CVExperience t={t} lang={lang} />
+    <CVProjects t={t} lang={lang} />
+    <CVSkills t={t} lang={lang} />
+    <CVEducation t={t} lang={lang} />
+    <CVLanguages t={t} lang={lang} />
+    <CVFooter t={t} lang={lang} />
+
+  </section>
+
+  <!-- ================= VIEW SYSTEM ================= -->
+  {!isPdf && (
+    <script is:inline>
+      function setView(mode){
+        const root = document.getElementById("cv-root");
+
+        root.classList.remove(
+          "view-preview",
+          "view-recruiter",
+          "view-ats",
+          "view-print"
+        );
+
+        switch(mode){
+          case "recruiter":
+            root.classList.add("view-recruiter");
+            break;
+          case "ats":
+            root.classList.add("view-ats");
+            break;
+          case "print":
+            root.classList.add("view-print");
+            break;
+          default:
+            root.classList.add("view-preview");
+        }
+      }
+
+      // default view
+      setView("preview");
+    </script>
+  )}
+
+</Layout>
+
+<style>
+/* ================= BASE ================= */
+.cv-page{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  background: white;
+  color: #111;
+}
+
+/* ================= ACTION BAR ================= */
+.cv-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:2.5rem;
+  flex-wrap:wrap;
+}
+
+.cv-badge{
+  font-size:0.75rem;
+  font-weight:600;
+  padding:0.35rem 0.75rem;
+  border-radius:999px;
+  background:#111;
+  color:white;
+}
+
+.cv-actions-right{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+}
+
+/* ================= BUTTONS ================= */
+.cv-btn{
+  font-size:0.75rem;
+  padding:0.45rem 0.9rem;
+  border-radius:0.5rem;
+  border:1px solid #ddd;
+  background:white;
+  color:#111;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.cv-btn:hover{
+  background:#f5f5f5;
+  transform:translateY(-1px);
+}
+
+.cv-btn-primary{
+  background:#111;
+  color:white;
+  border-color:#111;
+}
+
+/* ================= VIEW MODES ================= */
+.view-recruiter{ font-size:0.95rem; }
+
+.view-ats{
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing:0;
+}
+
+.view-ats *{
+  box-shadow:none !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+
+/* ================= PDF MODE ================= */
+.pdf-mode{
+  padding:0;
+  margin:0 auto;
+  max-width:800px;
+}
+
+/* ================= PRINT ================= */
+@media print {
+
+  body{
+    background:white !important;
+  }
+
+  nav,
+  footer,
+  #scroll-progress,
+  .skip-link,
+  .cv-actions{
+    display:none !important;
+  }
+
+  .cv-page{
+    padding:0;
+    margin:0;
+    max-width:100%;
+  }
+
+}
+</style>

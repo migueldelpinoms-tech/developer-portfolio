@@ -1,0 +1,97 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, lang, t } = Astro.props;
+
+const baseUrl = "https://michael.dev";
+const personName = "Michael";
+const email = "migueldelpinoms@gmail.com";
+const jobTitle = "Desarrollador de aplicaciones multiplataforma";
+
+const sameAs = [
+  "https://github.com",
+  "https://linkedin.com",
+  "https://instagram.com"
+];
+---
+
+<!doctype html>
+<html lang={lang} class="antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="Portfolio profesional de Michael. Desarrollador multiplataforma." />
+    <link rel="canonical" href={baseUrl} />
+
+    <!-- AOS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+/>
+
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+
+    <script
+      src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+      defer
+    ></script>
+  </head>
+
+  <body class="bg-white text-black dark:bg-black dark:text-white font-sans transition-colors duration-300">
+    
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">Saltar navegación</a>
+
+    <!-- Barra de progreso -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-blue-600 z-[60] w-0"></div>
+
+    <Navbar lang={lang} t={t} />
+
+    <main id="main-content" class="pt-16">
+      <slot />
+    </main>
+
+    <Footer t={t} />
+
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.AOS) {
+          AOS.init({
+            duration: 800,
+            easing: "ease-out-cubic",
+            once: true,
+            offset: 120
+        });
+      }
+
+        const progressBar = document.getElementById("scroll-progress");
+        window.addEventListener("scroll", () => {
+          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = (winScroll / height) * 100;
+          if (progressBar) progressBar.style.width = scrolled + "%";
+        }, { passive: true });
+      });
+    </script>
+
+    <style>
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: #000;
+        color: #fff;
+        padding: 8px;
+        z-index: 100;
+      }
+      .skip-link:focus { top: 0; }
+    </style>
+  </body>
+</html>

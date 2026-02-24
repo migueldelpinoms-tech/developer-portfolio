@@ -1,0 +1,185 @@
+---
+import es from "../../locales/es.json";
+import en from "../../locales/en.json";
+import { getLangFromUrl } from "../../utils/i18n.js";
+
+const lang = getLangFromUrl(Astro.url);
+const dict = lang === "en" ? en : es;
+
+type Project = {
+  name: string;
+  type: string;
+  status: string;
+  description: string;
+  tech: string[];
+  features: string[];
+};
+
+const projects = dict.cv.projects.items as Project[];
+const title = dict.cv.projects.title;
+const techLabel = dict.cv.projects.tech_label;
+const featuresLabel = dict.cv.projects.features_label;
+---
+
+<section class="cv-projects" aria-labelledby="cv-projects-title">
+
+  <header class="cv-section-header">
+    <h2 id="cv-projects-title" class="cv-section-title">
+      {title}
+    </h2>
+  </header>
+
+  <div class="cv-projects-list">
+
+    {projects.map((project) => (
+      <article class="cv-project-item">
+
+        <div class="cv-project-header">
+          <div class="cv-project-main">
+            <h3 class="cv-project-name">{project.name}</h3>
+            <p class="cv-project-type">{project.type}</p>
+          </div>
+
+          <div class="cv-project-status">
+            <span>{project.status}</span>
+          </div>
+        </div>
+
+        <p class="cv-project-description">
+          {project.description}
+        </p>
+
+        <div class="cv-project-block">
+          <h4 class="cv-project-subtitle">{techLabel}</h4>
+          <ul class="cv-project-tech">
+            {project.tech.map((tech) => (
+              <li>{tech}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="cv-project-block">
+          <h4 class="cv-project-subtitle">{featuresLabel}</h4>
+          <ul class="cv-project-features">
+            {project.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+      </article>
+    ))}
+
+  </div>
+
+</section>
+
+<style>
+.cv-projects{
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section-header{
+  margin-bottom: 1.2rem;
+}
+
+.cv-section-title{
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.cv-project-item{
+  margin-bottom: 2rem;
+}
+
+.cv-project-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.cv-project-name{
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cv-project-type{
+  font-size: 0.9rem;
+  color: #374151;
+  margin-top: 0.15rem;
+}
+
+.cv-project-status{
+  font-size: 0.8rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.cv-project-description{
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1f2937;
+  margin: 0.6rem 0 0.8rem 0;
+}
+
+.cv-project-block{
+  margin-bottom: 0.8rem;
+}
+
+.cv-project-subtitle{
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.cv-project-tech,
+.cv-project-features{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-project-tech li,
+.cv-project-features li{
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #1f2937;
+  white-space: nowrap;
+}
+
+@media print{
+  .cv-projects{
+    padding: 1.3rem 1.5rem 1rem 1.5rem;
+  }
+
+  .cv-section-title{
+    font-size: 14pt;
+  }
+
+  .cv-project-name{
+    font-size: 11pt;
+  }
+
+  .cv-project-description{
+    font-size: 10pt;
+  }
+
+  .cv-project-tech li,
+  .cv-project-features li{
+    font-size: 8.8pt;
+  }
+}
+</style>

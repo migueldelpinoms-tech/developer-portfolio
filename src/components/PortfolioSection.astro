@@ -1,0 +1,375 @@
+---
+const { t } = Astro.props;
+
+/* ===============================
+   PROYECTO DESTACADO (1.PRINCIPAL)
+=============================== */
+
+const featuredProject = {
+  image: "/imagenes/discoverclm.jpg",
+  tags: [
+    "Kotlin",
+    "Android Studio",
+    "Firebase Authentication",
+    "Firebase Realtime Database",
+    "Android Architecture",
+    "JUnit",
+    "Espresso"
+  ]
+};
+
+
+/* ===============================
+   PROYECTOS NORMALES (2 Y 3)
+=============================== */
+
+const projects = [
+  {
+    image: "/imagenes/proyecto2.jpg",
+    title: t("projects.items.portfolio.title"),
+    description: t("projects.items.portfolio.description"),
+    status: t("projects.items.portfolio.status"),
+    tags: [
+      "Astro",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      t("projects.tech.seo"),
+      t("projects.tech.accessibility"),
+      t("projects.tech.architecture")
+    ]
+  },
+
+  {
+    image: "/imagenes/python.jpg",
+    title: t("projects.items.python.title"),
+    description: t("projects.items.python.description"),
+    status: t("projects.items.python.status"),
+    tags: [
+      "Python",
+      t("projects.tech.programming"),
+      t("projects.tech.datastructures"),
+      "Scripts",
+      t("projects.tech.automation"),
+      t("projects.tech.cli")
+    ]
+  }
+];
+---
+
+
+<section
+  id="projects"
+  class="py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white"
+>
+
+  <!-- TITLE -->
+  <h2
+    class="text-3xl md:text-4xl font-bold mb-16 text-center"
+    data-aos="fade-up"
+  >
+    {t("projects.title")}
+  </h2>
+
+
+  <!-- ===============================
+       FEATURED PROJECT
+  =============================== -->
+
+  <div
+    class="max-w-[1120px] mx-auto px-6 mb-28"
+    data-aos="fade-up"
+  >
+
+    <article
+      class="featured-project hover-card group grid md:grid-cols-2 gap-8 items-center rounded-2xl p-6 md:p-8"
+    >
+
+      <!-- IMAGE -->
+      <div class="featured-image overflow-hidden rounded-xl">
+
+      <img
+        src={featuredProject.image}
+        alt={t("projects.items.featured.title")}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+
+</div>
+
+
+      <!-- CONTENT -->
+      <div>
+
+        <span class="featured-badge">
+          {t("projects.featured_badge")}
+        </span>
+
+        <h3 class="text-2xl font-bold mt-3 mb-3">
+          {t("projects.items.featured.title")}
+        </h3>
+
+       <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+          {t("projects.items.featured.description")}
+      </p>
+
+
+        <!-- TAGS -->
+        <div class="flex flex-wrap gap-2 mb-6">
+
+          {featuredProject.tags.map((tag) => (
+
+            <span class="tag-chip">
+              {tag}
+            </span>
+
+          ))}
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <a
+          href={`mailto:migueldelpinoms@gmail.com?subject=${encodeURIComponent(t("contact.mail_subject"))}`}
+          class="featured-btn inline-block"
+        >
+          {t("projects.featured_button")}
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- ===============================
+       PROJECTS GRID
+  =============================== -->
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1120px] mx-auto px-6"
+  >
+
+    {projects.map((project, index) => (
+
+      <article
+        class="project-card hover-card group"
+        data-aos="fade-up"
+        data-aos-delay={index * 150}
+      >
+
+        <!-- IMAGE -->
+        <div class="overflow-hidden rounded-xl mb-5">
+
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="400"
+            class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+        </div>
+
+
+        <!-- CONTENT -->
+        <div>
+
+          <h3 class="text-xl font-semibold mb-2">
+            {project.title}
+          </h3>
+
+          <p
+            class="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed"
+          >
+            {project.description}
+          </p>
+
+
+          <!-- TAGS -->
+          <div class="flex flex-wrap gap-2 mb-4">
+
+            {project.tags.map((tag) => (
+
+              <span class="tag-chip">
+                {tag}
+              </span>
+
+            ))}
+
+          </div>
+
+
+          <!-- STATUS -->
+          <p class="text-xs italic text-gray-500">
+            {project.status}
+          </p>
+
+        </div>
+
+      </article>
+
+    ))}
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* ===============================
+   CARD HOVER EFFECT (GLOBAL)
+=============================== */
+
+.hover-card {
+  transition: all .35s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.4);
+}
+
+/* ===============================
+   FEATURED PROJECT
+=============================== */
+
+.featured-project {
+  background: linear-gradient(145deg, #0f172a, #53648a);
+  box-shadow: 0 12px 35px rgba(0,0,0,.35);
+}
+
+html:not(.dark) .featured-project {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+}
+
+
+.featured-badge {
+  background: #111827;
+  color: white;
+  font-size: .7rem;
+  padding: .3rem .7rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+html:not(.dark) .featured-badge {
+  background: #1f2933;
+}
+
+
+.featured-btn {
+  background: #1f2933;
+  color: white;
+  padding: .6rem 1.4rem;
+  border-radius: .6rem;
+  font-size: .8rem;
+  transition: all .3s;
+}
+
+.featured-btn:hover {
+  opacity: .85;
+}
+
+
+/* ===============================
+   PROJECT CARD
+=============================== */
+
+.project-card {
+  background: linear-gradient(145deg, #0f172a, #111827);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+  transition: all .35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.4);
+}
+
+
+/* LIGHT MODE */
+
+html:not(.dark) .project-card {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+
+html:not(.dark) .project-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,.15);
+}
+
+
+/* ===============================
+   TAG CHIPS
+=============================== */
+
+.tag-chip {
+  font-size: .7rem;
+  font-weight: 500;
+  padding: .25rem .6rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(209 213 219);
+  color: rgb(75 85 99);
+  background: transparent;
+}
+
+
+/* DARK */
+
+html.dark .tag-chip {
+  border-color: rgb(55 65 81);
+  color: rgb(209 213 219);
+}
+
+/* ===============================
+   FEATURED IMAGE (MAIN PROJECT)
+=============================== */
+
+.featured-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Desktop */
+
+@media (min-width: 768px) {
+  .featured-image-wrapper {
+    min-height: 360px;
+  }
+}
+
+/* ===============================
+   FEATURED IMAGE FIX
+=============================== */
+
+.featured-image {
+  height: 320px;
+}
+
+@media (min-width: 768px) {
+  .featured-image {
+    height: 360px;
+  }
+}
+
+</style>

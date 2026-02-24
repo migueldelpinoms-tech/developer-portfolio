@@ -1,0 +1,137 @@
+---
+const { t } = Astro.props;
+
+const email = "migueldelpinoms@gmail.com";
+---
+
+<section 
+  id="home"
+  class="py-20 md:py-32 bg-white dark:bg-black text-black dark:text-white"
+>
+  <div class="max-w-[1120px] mx-auto px-6 
+              grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+    <!-- FOTO PRINCIPAL -->
+    <div class="flex justify-center md:justify-start fade-global fade-d1">
+      <div class="relative w-40 h-40 md:w-56 md:h-56">
+
+        <div class="absolute inset-0 rounded-full border-[3px] border-gray-300 dark:border-gray-700 animate-spin-slow"></div>
+
+        <div class="absolute inset-[6px] rounded-full bg-white dark:bg-black 
+                    shadow-[0_10px_35px_rgba(0,0,0,0.20)] flex items-center justify-center">
+          <img 
+            src="/imagenes/mifoto.jpg"
+            alt={t("header.alt")}
+            width="224"
+            height="224"
+            decoding="async"
+            fetchpriority="high"
+            class="w-full h-full rounded-full object-cover"
+          />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TEXTO -->
+    <div class="space-y-6 md:space-y-7">
+
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1]
+                 fade-global fade-d2">
+        {t("header.title")}
+      </h1>
+
+      <span 
+        class="inline-block text-xs md:text-sm px-4 py-1.5 
+               bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 
+               rounded-full fade-global fade-d3"
+      >
+        {t("header.available")}
+      </span>
+
+      <p class="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed max-w-lg 
+                fade-global fade-d4">
+        {t("header.description")}
+      </p>
+
+      <!-- BOTONES PRINCIPALES -->
+      <div class="flex flex-wrap gap-3 md:gap-4 fade-global fade-d5">
+
+        <!-- EMAIL -->
+        <a
+          href={`mailto:${email}?subject=Contacto%20desde%20portfolio`}
+          class="cta-pill"
+        >
+          Email
+        </a>
+
+        <!-- LINKEDIN -->
+        <a
+          href="https://linkedin.com/"
+          target="_blank"
+          rel="noopener"
+          class="cta-pill"
+        >
+          {t("header.linkedin")}
+        </a>
+
+        <!-- GITHUB -->
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener"
+          class="cta-pill"
+        >
+          {t("header.github")}
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.animate-spin-slow {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-pill {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(209 213 219);
+  font-weight: 500;
+  background: transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.dark .cta-pill {
+  border-color: rgb(55 65 81);
+}
+
+.cta-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  background-color: rgb(243 244 246);
+}
+
+.dark .cta-pill:hover {
+  background-color: rgb(31 41 55);
+}
+
+.cta-pill:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.cta-pill:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+}
+</style>

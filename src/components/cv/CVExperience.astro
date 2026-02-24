@@ -1,0 +1,155 @@
+---
+/* ============================
+   CV EXPERIENCE (I18N SAFE)
+   ============================ */
+
+import es from "../../locales/es.json";
+import en from "../../locales/en.json";
+import { getLangFromUrl } from "../../utils/i18n.js";
+
+const lang = getLangFromUrl(Astro.url);
+
+// 🔹 Forzamos any para evitar errores falsos de TypeScript
+const dict: any = lang === "en" ? en : es;
+
+type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  bullets: string[];
+};
+
+const experiences = dict.cv.experience.items as Experience[];
+const title = dict.cv.experience.title;
+---
+
+<section class="cv-experience" aria-labelledby="cv-experience-title">
+
+  <header class="cv-section-header">
+    <h2 id="cv-experience-title" class="cv-section-title">
+      {title}
+    </h2>
+  </header>
+
+  <div class="cv-experience-list">
+
+    {experiences.map((exp) => (
+      <article class="cv-experience-item">
+
+        <div class="cv-exp-header">
+          <div class="cv-exp-main">
+            <h3 class="cv-exp-company">{exp.company}</h3>
+            <p class="cv-exp-role">{exp.role}</p>
+          </div>
+
+          <div class="cv-exp-meta">
+            <span class="cv-exp-period">{exp.period}</span>
+            <span class="cv-exp-separator">·</span>
+            <span class="cv-exp-location">{exp.location}</span>
+          </div>
+        </div>
+
+        <ul class="cv-exp-bullets">
+          {exp.bullets.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+
+      </article>
+    ))}
+
+  </div>
+
+</section>
+
+<style>
+.cv-experience{
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section-header{
+  margin-bottom: 1.2rem;
+}
+
+.cv-section-title{
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Item */
+.cv-experience-item{
+  margin-bottom: 1.5rem;
+}
+
+/* Header */
+.cv-exp-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cv-exp-company{
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cv-exp-role{
+  font-size: 0.95rem;
+  color: #374151;
+  margin-top: 0.1rem;
+}
+
+.cv-exp-meta{
+  font-size: 0.85rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.cv-exp-separator{
+  margin: 0 0.35rem;
+  opacity: 0.6;
+}
+
+/* Bullets */
+.cv-exp-bullets{
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.cv-exp-bullets li{
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1f2937;
+  margin-bottom: 0.35rem;
+}
+
+/* PRINT OPTIMIZATION */
+@media print{
+  .cv-experience{
+    padding: 1.3rem 1.5rem 1rem 1.5rem;
+  }
+
+  .cv-section-title{
+    font-size: 14pt;
+  }
+
+  .cv-exp-company{
+    font-size: 11pt;
+  }
+
+  .cv-exp-role{
+    font-size: 10pt;
+  }
+
+  .cv-exp-bullets li{
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+}
+</style>

@@ -1,0 +1,23 @@
+{
+  "name": "mi-portfolio",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "npx astro dev",
+    "build": "npx astro build",
+    "preview": "npx astro preview",
+
+    "pdf": "node ./scripts/generate-pdf.js",
+    "pdf:empresa": "node ./scripts/generate-pdf-empresa.js"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "lucide-astro": "^0.330.0"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "playwright": "^1.48.0"
+  }
+}

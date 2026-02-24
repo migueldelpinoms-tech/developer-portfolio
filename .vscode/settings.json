@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.astro": "astro"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "astro.languageServer.runtime": "node",
+  "astro.languageServer.typescript.enabled": true
+}

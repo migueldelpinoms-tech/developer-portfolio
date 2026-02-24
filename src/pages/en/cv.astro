@@ -1,0 +1,9 @@
+---
+import CV from "../cv.astro";
+import { getLangFromUrl, tFactory } from "../../utils/i18n.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = tFactory(lang);
+---
+
+<CV lang={lang} t={t} />

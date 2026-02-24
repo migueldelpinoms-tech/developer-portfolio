@@ -1,0 +1,174 @@
+---
+/* ============================
+   CV FOOTER (I18N)
+   ============================ */
+
+import es from "../../locales/es.json";
+import en from "../../locales/en.json";
+
+import { getLangFromUrl } from "../../utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const dict = lang === "en" ? en : es;
+
+/* Datos fijos */
+const fullName = "Miguel Del Pino Muelas";
+const email = "migueldelpinoms@gmail.com";
+const year = new Date().getFullYear();
+
+/* Textos traducidos */
+const location = dict.cv.footer.location;
+const role = dict.cv.footer.role;
+const legalText = dict.cv.footer.legal;
+---
+
+<footer class="cv-footer" aria-label="Pie de currículum">
+
+  <div class="cv-footer-container">
+
+    <!-- IDENTIDAD -->
+    <div class="cv-footer-identity">
+      <p class="cv-footer-name">
+        {fullName}
+      </p>
+
+      <p class="cv-footer-role">
+        {role}
+      </p>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="cv-footer-contact">
+      <span class="cv-footer-item">{location}</span>
+      <span class="cv-footer-separator">·</span>
+      <a class="cv-footer-link" href={`mailto:${email}`}>
+        {email}
+      </a>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="cv-footer-legal">
+      <p class="cv-footer-legal-text">
+        {legalText}
+      </p>
+
+      <p class="cv-footer-copy">
+        © {year} {fullName}
+      </p>
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+/* ============================
+   CV FOOTER
+   ============================ */
+
+.cv-footer{
+  margin-top: 3rem;
+  padding: 1.6rem 2.5rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 0.85rem;
+}
+
+.cv-footer-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* ============================
+   IDENTITY
+   ============================ */
+
+.cv-footer-name{
+  font-weight: 800;
+  color: #020617;
+  letter-spacing: -0.01em;
+}
+
+.cv-footer-role{
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ============================
+   CONTACT
+   ============================ */
+
+.cv-footer-contact{
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #1f2937;
+}
+
+.cv-footer-item{
+  font-weight: 500;
+}
+
+.cv-footer-separator{
+  opacity: 0.5;
+}
+
+.cv-footer-link{
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cv-footer-link:hover{
+  text-decoration: underline;
+}
+
+/* ============================
+   LEGAL
+   ============================ */
+
+.cv-footer-legal{
+  margin-top: 0.4rem;
+  max-width: 680px;
+}
+
+.cv-footer-legal-text{
+  font-size: 0.72rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.cv-footer-copy{
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-top: 0.2rem;
+}
+
+/* ============================
+   PRINT VERSION
+   ============================ */
+
+@media print{
+
+  .cv-footer{
+    padding: 1rem 1.4rem 1.2rem;
+    border-top: 1px solid #000;
+  }
+
+  .cv-footer-link{
+    color: #000;
+    text-decoration: none;
+  }
+
+  .cv-footer-legal-text,
+  .cv-footer-copy{
+    color: #000;
+  }
+
+}
+</style>

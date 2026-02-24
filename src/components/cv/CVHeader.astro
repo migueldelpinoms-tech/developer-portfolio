@@ -1,0 +1,295 @@
+---
+/* ============================
+   CV HEADER DATA (I18N)
+   ============================ */
+
+const { t } = Astro.props;
+
+const fullName = "Miguel Del Pino Muelas";
+
+const role = t("cv.header.role");
+
+const location = t("cv.header.location");
+
+const email = "migueldelpinoms@gmail.com";
+
+const portfolio = "https://michael.dev"; // futuro
+
+const availability = t("cv.header.availability");
+
+/* ============================
+   PDF CONFIG
+   ============================ */
+const pdfUrl = "/cv-empresa.pdf";
+---
+
+<header class="cv-header" aria-label="Encabezado del currículum">
+
+  <!-- ================= HEADER CONTENT ================= -->
+
+  <div class="cv-header-container">
+
+    <!-- IDENTIDAD -->
+    <div class="cv-identity">
+      <h1 class="cv-name">
+        {fullName}
+      </h1>
+
+      <p class="cv-role whitespace-pre-line">
+        {role}
+      </p>
+
+      <p class="cv-availability">
+        {availability}
+      </p>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="cv-contact">
+
+      <div class="cv-contact-item">
+        <span class="cv-contact-label">
+          {t("cv.header.labels.location")}
+        </span>
+        <span class="cv-contact-value">{location}</span>
+      </div>
+
+      <div class="cv-contact-item">
+        <span class="cv-contact-label">
+          {t("cv.header.labels.email")}
+        </span>
+        <a class="cv-contact-link" href={`mailto:${email}`}>
+          {email}
+        </a>
+      </div>
+
+      <div class="cv-contact-item">
+        <span class="cv-contact-label">
+          {t("cv.header.labels.portfolio")}
+        </span>
+        <span class="cv-contact-value">
+          {t("cv.header.portfolio_status")}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<style>
+/* ============================
+   CV HEADER
+   ============================ */
+
+.cv-header{
+  padding: 2.4rem 2.5rem 2.2rem;
+  border-bottom: 2px solid #111827;
+  background: #ffffff;
+}
+
+/* ============================
+   ACTION BAR
+   ============================ */
+
+.cv-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:1.6rem;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.cv-badge{
+  background:#0f172a;
+  color:white;
+  font-size:0.7rem;
+  font-weight:700;
+  padding:0.35rem 0.7rem;
+  border-radius:999px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.cv-buttons{
+  display:flex;
+  gap:0.5rem;
+  flex-wrap:wrap;
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
+
+.cv-btn{
+  font-size:0.7rem;
+  font-weight:600;
+  padding:0.45rem 0.8rem;
+  border-radius:0.5rem;
+  border:1px solid #e5e7eb;
+  background:white;
+  color:#111827;
+  cursor:pointer;
+  text-decoration:none;
+  transition:all .2s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cv-btn:hover{
+  background:#f5f5f5;
+  transform:translateY(-1px);
+}
+
+.cv-btn-secondary{
+  background:white;
+}
+
+.cv-btn-primary{
+  background:#0f172a;
+  color:white;
+  border-color:#0f172a;
+}
+
+.cv-btn-primary:hover{
+  background:#020617;
+}
+
+/* ============================
+   HEADER CONTENT
+   ============================ */
+
+.cv-header-container{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ============================
+   IDENTITY
+   ============================ */
+
+.cv-identity{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cv-name{
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #020617;
+  line-height: 1.05;
+}
+
+.cv-role{
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1f2937;
+  max-width: 95%;
+}
+
+.cv-availability{
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+/* ============================
+   CONTACT
+   ============================ */
+
+.cv-contact{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.cv-contact-item{
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.cv-contact-label{
+  font-weight: 700;
+  color: #020617;
+}
+
+.cv-contact-value{
+  color: #1f2937;
+}
+
+.cv-contact-link{
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cv-contact-link:hover{
+  text-decoration: underline;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 900px){
+
+  .cv-header-container{
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .cv-actions{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}
+
+/* ============================
+   PRINT VERSION
+   ============================ */
+
+@media print{
+
+  .cv-actions{
+    display:none;
+  }
+
+  .cv-header{
+    padding: 1.6rem 1.6rem 1.2rem;
+    border-bottom: 2px solid #000;
+  }
+
+  .cv-name{
+    font-size: 18pt;
+  }
+
+  .cv-role{
+    font-size: 11pt;
+  }
+
+  .cv-availability{
+    font-size: 10pt;
+    color: #000;
+  }
+
+  .cv-contact{
+    font-size: 9.5pt;
+  }
+
+  .cv-contact-link{
+    color: #000;
+    text-decoration: none;
+  }
+
+}
+</style>
