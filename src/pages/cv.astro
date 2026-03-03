@@ -48,23 +48,11 @@ const cvEmpresaUrl = "/cv-empresa.pdf";
 
         <div class="cv-actions-right">
 
-          <button type="button" class="cv-btn" onclick="setView('preview')">
-            Preview
-          </button>
-
-          <button type="button" class="cv-btn" onclick="setView('recruiter')">
-            Recruiter
-          </button>
-
-          <button type="button" class="cv-btn" onclick="setView('ats')">
-            ATS
-          </button>
-
           <button type="button" class="cv-btn" onclick="window.print()">
             {lang === "en" ? "Print" : "Imprimir"}
           </button>
 
-          <!-- ✅ DESCARGA CV EMPRESA -->
+          <!-- DESCARGA CV EMPRESA -->
           <a href={cvEmpresaUrl} class="cv-btn cv-btn-primary" download>
             {lang === "en" ? "Download CV" : "Descargar CV"}
           </a>
@@ -177,6 +165,13 @@ const cvEmpresaUrl = "/cv-empresa.pdf";
   background:#111;
   color:white;
   border-color:#111;
+}
+
+/* FIX: Hover botón Descargar CV */
+.cv-btn-primary:hover{
+  background:#020617;
+  color:white;
+  border-color:#020617;
 }
 
 /* ================= VIEW MODES ================= */
