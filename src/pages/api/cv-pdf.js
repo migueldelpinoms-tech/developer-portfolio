@@ -6,7 +6,12 @@ export async function GET() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  const url = "http://localhost:4321/cv?pdf=true";
+  const baseUrl =
+  process.env.URL ||                 // Netlify producción
+  process.env.DEPLOY_PRIME_URL ||    // Netlify preview deploy
+  "http://localhost:4321";           // desarrollo local
+
+  const url = `${baseUrl}/cv?pdf=true`;
 
   await page.goto(url, {
     waitUntil: "networkidle",
