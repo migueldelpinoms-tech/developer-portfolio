@@ -1,46 +1,71 @@
-# Astro Starter Kit: Basics
+# Developer Portfolio – Miguel Del Pino
 
-```sh
-npm create astro@latest -- --template basics
-```
+Portfolio personal de desarrollador donde muestro mis proyectos, habilidades y experiencia como **Desarrollador de Aplicaciones Multiplataforma (DAM)**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El objetivo de este portfolio es presentar mis proyectos y tecnologías en un entorno moderno, rápido y accesible.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## Portfolio Online
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Puedes verlo aquí:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+👉 https://migueldelpino.netlify.app
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Tecnologías utilizadas
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Astro**
+- **TailwindCSS**
+- **JavaScript**
+- **HTML5 / CSS3**
+- **Netlify (deploy)**
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Características
+
+- Diseño responsive
+- Dark / Light mode
+- Portfolio de proyectos
+- CV descargable en PDF
+- Contacto directo
+- Integración con GitHub y LinkedIn
+
+---
+
+## Stack técnico
+
+### Mobile
+- Kotlin
+- Android Studio
+- Arquitectura MVVM
+
+### Backend
+- Java
+- Python
+- SQL / MySQL
+
+### Web
+- HTML
+- CSS
+- JavaScript
+- Astro
+- Tailwind
+
+### Herramientas
+- Git / GitHub
+- Postman
+- JUnit
+- APIs REST
+
+---
+
+## Instalación local
+
+Si quieres ejecutar el proyecto en local:
+
+```bash
+npm install
+npm run dev
