@@ -1,4 +1,4 @@
-# Developer Portfolio – Miguel Del Pino
+# Developer Portfolio – Miguel Del Pino (Michael)
 
 Portfolio personal de desarrollador donde muestro mis proyectos, habilidades y experiencia como **Desarrollador de Aplicaciones Multiplataforma (DAM)**.
 
