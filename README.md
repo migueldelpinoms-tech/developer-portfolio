@@ -1,7 +1,5 @@
 # Developer Portfolio – Miguel Del Pino
 
-![Portfolio Home](portfolio-home.png)
-
 Portfolio personal de desarrollador donde muestro mis proyectos, habilidades y experiencia como **Desarrollador de Aplicaciones Multiplataforma (DAM)**.
 
 El objetivo de este portfolio es presentar mis proyectos y tecnologías en un entorno moderno, rápido y accesible.
