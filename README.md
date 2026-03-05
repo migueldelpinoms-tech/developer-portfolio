@@ -78,6 +78,19 @@ Puedes verlo aquí:
 
 ---
 
+## Contacto
+
+- **LinkedIn**  
+  [linkedin.com/in/miguel-del-pino-ms](https://linkedin.com/in/miguel-del-pino-ms)
+
+- **Portfolio**  
+  [migueldelpino.netlify.app](https://migueldelpino.netlify.app)
+
+- **Email**  
+  [migueldelpinoms@gmail.com](mailto:migueldelpinoms@gmail.com)
+
+---
+
 ## Instalación local
 
 Si quieres ejecutar el proyecto en local:
