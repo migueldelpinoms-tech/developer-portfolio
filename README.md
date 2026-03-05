@@ -1,4 +1,4 @@
-# 💼 Developer Portfolio – Miguel Del Pino
+# Developer Portfolio – Miguel Del Pino
 
 ![Portfolio Home](portfolio-home.png)
 
@@ -8,7 +8,7 @@ El objetivo de este portfolio es presentar mis proyectos y tecnologías en un en
 
 ---
 
-## 🌐 Portfolio Online
+## Portfolio Online
 
 Puedes verlo aquí:
 
@@ -16,7 +16,7 @@ Puedes verlo aquí:
 
 ---
 
-## 🖥️ Preview del Portfolio
+## Preview del Portfolio
 
 ### Home
 ![Portfolio Home](portfolio-home.png)
@@ -32,7 +32,7 @@ Puedes verlo aquí:
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Astro**
 - **TailwindCSS**
@@ -42,7 +42,7 @@ Puedes verlo aquí:
 
 ---
 
-## ✨ Características
+## Características
 
 - Diseño responsive
 - Dark / Light mode
@@ -53,26 +53,26 @@ Puedes verlo aquí:
 
 ---
 
-## 🧠 Stack técnico
+## Stack técnico
 
-### 📱 Mobile
+### Mobile
 - Kotlin
 - Android Studio
 - Arquitectura MVVM
 
-### ⚙️ Backend
+### Backend
 - Java
 - Python
 - SQL / MySQL
 
-### 🌐 Web
+### Web
 - HTML
 - CSS
 - JavaScript
 - Astro
 - Tailwind
 
-### 🛠 Herramientas
+### Herramientas
 - Git / GitHub
 - Postman
 - JUnit
@@ -80,7 +80,7 @@ Puedes verlo aquí:
 
 ---
 
-## ⚙️ Instalación local
+## Instalación local
 
 Si quieres ejecutar el proyecto en local:
 
